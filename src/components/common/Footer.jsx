@@ -3,7 +3,7 @@ import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo/Logo-Full-Light.png";
 import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
-
+import HighlightText from "../core/HomePage/HighlightText";
 
 const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
 const Resources = ["Articles","Blog", "Chart Sheet", "Code challenges", "Docs", "Projects", "Videos","Workspaces",];
@@ -125,7 +125,8 @@ const Footer = () => {
                 </div>
             </div>
 
-          <div className = "text-center">Made with ❤️ By Abhikant Singh</div>
+          <div className = "text-center">Made By 
+          <HighlightText text={"Raj Chaturvedi "} /> 🙂</div>
 
         </div>
       </div>

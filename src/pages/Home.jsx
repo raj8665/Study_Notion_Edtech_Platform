@@ -1,7 +1,8 @@
+import React from 'react'
 import { FaArrowRight } from "react-icons/fa"                                  // Icons Import
 import { Link } from "react-router-dom"
 import Banner from "../assets/Images/banner.mp4"                              // Image and Video Import
-// Component Imports
+// Component Imports 
 import Footer from "../components/common/Footer"
 import CTAButton from "../components/core/HomePage/Button"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
@@ -36,7 +37,7 @@ const Home = () => {
                     With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.
                 </div>
 
-                <div className='flex flex-row gap-7 mt-8'>                                         {/* here we passed "Learn More" as a children in CTAButton component and here compnent is used because there are many button like this; */}
+                <div className='flex flex-row gap-7 mt-8'>                                         {/* here we passed "Learn More" as a children in CTAButton i.e. Click to action component and here compnent is used because there are many button like this; */}
                     <CTAButton active={true} linkto={"/signup"}>  Learn More </CTAButton>          {/* here active is passed as props because if active is true then button is yellow otherwise black; */}
                     <CTAButton active={false} linkto={"/login"}>  Book a Demo </CTAButton>
                 </div>
