@@ -11,7 +11,7 @@ const InstructorSection = () => {
           
           {/* left part */}
           <div className='lg:w-[50%]'>
-              <img src={Instructor}  alt="" className = "shadow-white shadow-[-20px_-20px_20px_0]" />  
+              <img src={Instructor}  alt="Instructor" className = "shadow-white shadow-[-20px_-20px_20px_0]" />  
           </div>
           
           {/* right part */}

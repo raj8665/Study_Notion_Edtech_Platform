@@ -8,7 +8,7 @@ const tabsName = [
     "Free",
     "New to coding",
     "Most popular",
-    "Skill paths",
+    "Skills paths",
     "Career paths",
 ];
 
@@ -23,6 +23,7 @@ const ExploreMore = () => {
         const result = HomePageExplore.filter((ele) => ele.tag === value);
         setCourses(result[0].courses);
         setCurrentCard(result[0].courses[0].heading);
+        console.log(result[0].courses);
     }
 
 
