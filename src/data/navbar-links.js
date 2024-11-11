@@ -5,6 +5,7 @@ export const NavbarLinks = [
   },
   {
     title: "Catalog",
+    // Because Catlog do not have its own path on hovering drop down menu appears 
     // path: '/catalog',
   },
   {
