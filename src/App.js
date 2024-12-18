@@ -5,6 +5,8 @@ import Navbar from "./components/common/Navbar"
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import VerifyOtp from "./pages/VerifyOtp";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 function App() {
   return (
@@ -31,6 +33,10 @@ function App() {
         />
         
         <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        <Route path="/update-password/:id" element={<ResetPassword />} />
+
+        <Route path="/verify-email" element={<VerifyOtp />} />
           </Routes>
    </div>
   );
