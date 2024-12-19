@@ -9,6 +9,7 @@ import ResetPassword from "./pages/ResetPassword";
 import VerifyOtp from "./pages/VerifyOtp";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
+import MyProfile from "./components/core/Dashboard/MyProfile";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 function App() {
   return (
