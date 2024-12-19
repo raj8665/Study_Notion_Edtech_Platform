@@ -62,7 +62,7 @@ const VerifyOtp = () => {
                 <button type="submit" className="w-full bg-yellow-50 py-[12px] px-[12px] rounded-[8px] mt-6 font-medium text-richblack-900">Verify Email</button>
                 </form>
 
-                
+
                 {/* Ek baar UI Check krna hai iska baad mein */}
                 
                 <div className="mt-6 flex items-center justify-between">
@@ -73,7 +73,7 @@ const VerifyOtp = () => {
             </Link>
             <button
               className="flex items-center text-blue-100 gap-x-2"
-              onClick={() => dispatch(sendOtp(signupData.email))}
+              onClick={() => dispatch(sendOtp(signupData.email, navigate))}
             >
               <RxCountdownTimer />
               Resend it
