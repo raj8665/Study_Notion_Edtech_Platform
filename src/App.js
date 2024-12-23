@@ -10,6 +10,8 @@ import VerifyOtp from "./pages/VerifyOtp";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import MyProfile from "./components/core/Dashboard/MyProfile";
+import MyCourses from "./components/core/Dashboard/MyCourses/MyCourses";
+import AddCourse from "./components/core/Dashboard/AddCourse/index";
 import Error from "./pages/Error";
 import Settings from "./components/core/Dashboard/Settings";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
@@ -68,6 +70,13 @@ function App() {
           </>
         )
       }
+
+{user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+            <>
+              <Route path="dashboard/add-course" element={<AddCourse />} />
+              <Route path="dashboard/my-courses" element={<MyCourses />} />
+            </>
+          )}
  
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
