@@ -3,7 +3,7 @@ import { FaCheck } from 'react-icons/fa';
 import { useSelector } from 'react-redux'
 import CourseBuilderForm from './CourseBuilder/CourseBuilderForm';
 import CourseInformationForm from './CourseInformation/CourseInformationForm';
-import PublishCourse from './PublishCourse/PublishCourse';
+import PublishCourse from '../PublishCourse/PublishCourse';
 
 const RenderSteps = () => {
 

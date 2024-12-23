@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import MyCourses from "./components/core/Dashboard/MyCourses/MyCourses";
 import AddCourse from "./components/core/Dashboard/AddCourse/index";
+import EditCourse from "./components/core/Dashboard/EditCourse/EditCourse";
 import Error from "./pages/Error";
 import Settings from "./components/core/Dashboard/Settings";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
