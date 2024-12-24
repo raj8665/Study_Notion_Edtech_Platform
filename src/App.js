@@ -13,6 +13,8 @@ import MyProfile from "./components/core/Dashboard/MyProfile";
 import MyCourses from "./components/core/Dashboard/MyCourses/MyCourses";
 import AddCourse from "./components/core/Dashboard/AddCourse/index";
 import EditCourse from "./components/core/Dashboard/EditCourse/EditCourse";
+import ViewCourse from "./pages/ViewCourse";
+import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Error from "./pages/Error";
 import Settings from "./components/core/Dashboard/Settings";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
@@ -91,9 +93,26 @@ function App() {
 
         <Route path="/about" element={<About />} />
 
+        <Route
+          element={
+            <PrivateRoute>
+              <ViewCourse />
+            </PrivateRoute>
+          }
+        ></Route>
+
         <Route path="/contact" element={<ContactUs />} />
 
         <Route path="*" element={<Error />} />
+
+        {user?.accountType === ACCOUNT_TYPE.STUDENT && (
+            <>
+              <Route
+                path="/dashboard/enrolled-courses/view-course/:courseId/section/:sectionId/sub-section/:subsectionId"
+                element={<VideoDetails />}
+              />
+            </>
+          )}
 
           </Routes>
    </div>
