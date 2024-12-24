@@ -5,17 +5,16 @@ import { Link } from "react-router-dom"
 
 import { forgotPassword } from "../services/operations/authAPI"
 
-function ForgotPassword() {
-  const [email, setEmail] = useState("")
-  const [emailSent, setEmailSent] = useState(false)
-  const dispatch = useDispatch()
-  const { loading } = useSelector((state) => state.auth)
-
-  const handleOnSubmit = (e) => {
-    e.preventDefault()
-    dispatch(forgotPassword(email, setEmailSent))
-  }
-
+const ResetPassword = () => {
+    const dispatch = useDispatch()
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        dispatch(forgotPassword(email,setemailSent));
+        
+    }
+const {loading}= useSelector((state)=>state.auth)
+    const [emailSent, setemailSent] = useState(false)
+    const [email, setemail] = useState("");
   return (
     <div className='grid min-h-[calc(100vh-3.5rem)] place-items-center'>
             {
@@ -35,7 +34,7 @@ function ForgotPassword() {
                         {
                             !emailSent && (
                                 <label class="w-full"><p class="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">Email Address <sup class="text-pink-200">*</sup></p>
-                                <input required="" type="email" name="email" placeholder="Enter email address" value={email} onChange={(e)=>setEmail(e.target.value)} className="rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none w-full"></input>
+                                <input required="" type="email" name="email" placeholder="Enter email address" value={email} onChange={(e)=>setemail(e.target.value)} className="rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none w-full"></input>
                                 </label>
                             )
                         }
@@ -55,4 +54,4 @@ function ForgotPassword() {
   )
 }
 
-export default ForgotPassword
+export default ResetPassword

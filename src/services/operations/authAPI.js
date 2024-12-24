@@ -3,8 +3,8 @@ import { toast } from "react-hot-toast"
 import { setLoading, setToken } from "../../slices/authSlice"
 import { resetCart } from "../../slices/cartSlice"
 import { setUser } from "../../slices/profileSlice"
-import { apiConnector } from "../apiConnector"
 import { endpoints } from "../apis"
+import {apiConnector} from "../apiConnector"
 import {setProgress} from "../../slices/loadingBarSlice"
 
 const {
@@ -123,9 +123,9 @@ export function login(email, password, navigate) {
   }
 }
 
-export function forgotPassword(email, setEmailSent) {
+export function getPasswordResetToken(email, setEmailSent) {
   return async (dispatch) => {
-    // const toastId = toast.loading("Loading...")
+    const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
       const response = await apiConnector("POST", RESETPASSTOKEN_API, {
@@ -135,7 +135,6 @@ export function forgotPassword(email, setEmailSent) {
       console.log("RESETPASSTOKEN RESPONSE............", response)
 
       if (!response.data.success) {
-        toast.error(response.data.message)
         throw new Error(response.data.message)
       }
 
@@ -145,7 +144,7 @@ export function forgotPassword(email, setEmailSent) {
       console.log("RESETPASSTOKEN ERROR............", error)
       toast.error("Failed To Send Reset Email")
     }
-    // toast.dismiss(toastId)
+    toast.dismiss(toastId)
     dispatch(setLoading(false))
   }
 }
@@ -187,5 +186,32 @@ export function logout(navigate) {
     localStorage.removeItem("user")
     toast.success("Logged Out")
     navigate("/")
+  }
+}
+
+
+export function forgotPassword(email,setEmailSent) {
+  return async (dispatch) => {
+    // const toastId = toast.loading("Loading...")
+    dispatch(setLoading(true))
+    try {
+      const response = await apiConnector("POST", RESETPASSTOKEN_API, {
+        email,
+      })
+
+      console.log("FORGOTPASSWORD RESPONSE............", response)
+
+      if (!response.data.success) {
+        toast.error(response.data.message)
+        throw new Error(response.data.message)
+      }
+
+      toast.success("Reset Email Sent");
+      setEmailSent(true)
+    } catch (error) {
+      console.log("FORGOTPASSWORD ERROR............", error)
+    }
+    // toast.dismiss(toastId)
+    dispatch(setLoading(false))
   }
 }
