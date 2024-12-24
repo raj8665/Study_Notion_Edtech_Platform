@@ -21,7 +21,8 @@ import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from "./components/core/Dashboard/Cart";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import Dashboard from "./pages/Dashboard"
+import Dashboard from "./pages/Dashboard";
+import InstructorDashboard from "./components/core/Dashboard/InstructorDashboard/InstructorDashboard";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import PrivateRoute from "./components/core/Auth/PrivateRoute"
 function App() {
@@ -81,6 +82,10 @@ function App() {
               <Route
                 path="dashboard/edit-course/:courseId"
                 element={<EditCourse />}
+              />
+              <Route
+                path="dashboard/instructor"
+                element={<InstructorDashboard />}
               />
             </>
           )}
