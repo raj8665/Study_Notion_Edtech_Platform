@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux';
 import { addCourseDetails, editCourseDetails, fetchCourseCategories } from '.././../../../../services/operations/courseDetailsAPI';
 import { HiOutlineCurrencyRupee } from 'react-icons/hi';
-import { BiUpload } from 'react-icons/bi';
 import RequirementField from './RequirementFeild';
 import { setStep, setCourse, setEditCourse} from '../../../../../slices/courseSlice';
 import IconBtn from '../../../../common/IconBtn';
@@ -37,7 +36,7 @@ const CourseInformationForm = () => {
             }
             setLoading(false);
         }
-
+        console.log("The fetched token is", token);
         if(editCourse) {
             setValue("courseTitle", course.courseName);
             setValue("courseShortDesc", course.courseDescription);
