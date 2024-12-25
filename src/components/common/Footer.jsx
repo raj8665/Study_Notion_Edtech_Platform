@@ -1,6 +1,7 @@
 import React from "react";
 import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
+import {HighlightText} from '../core/HomePage/HighlightText'
 
 // Images
 import Logo from "../../assets/Logo/Logo-Full-Light.png";
@@ -172,7 +173,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="text-center">Made by Himanshu Sangwan 🗿 © 2023 Studynotion</div>
+          <div className="text-center text-richblack-50 font-bold text-xl">Made by Raj Chaturvedi </div>
         </div>
       </div>
     </div>
