@@ -37,10 +37,13 @@ useEffect(() => {
 
 useEffect(() => {
     const fetchCatalogPageData = async () => {
-        
+           try{
             const result = await getCatalogaPageData(categoryID,dispatch);
             setCatalogPageData(result);
             // console.log("page data",CatalogPageData);
+           } catch(error) {
+            console.log(error);
+        }
         
     }
     if (categoryID) {

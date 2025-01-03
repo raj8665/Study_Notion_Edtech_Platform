@@ -58,7 +58,13 @@ exports.categoryPageDetails = async (req, res) => {
 	try {
         // get Category ID
 		const { categoryId } = req.body;
-
+        
+		if (!categoryId) {
+            return res.status(400).json({
+                success: false,
+                message: "Category ID is required.",
+            });
+        }
 		// Get courses for the specified category
 		const selectedCategory = await Category.findById(categoryId)          
 			.populate({path:"courses",
@@ -109,6 +115,7 @@ exports.categoryPageDetails = async (req, res) => {
 			success: true,
 		});
 	} catch (error) {
+		console.error("Error fetching category page details:", error);
 		return res.status(500).json({
 			success: false,
 			message: "Internal server error",

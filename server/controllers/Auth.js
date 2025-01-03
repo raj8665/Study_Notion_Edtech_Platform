@@ -236,7 +236,7 @@ exports.login = async (req, res) => {
 };
 
 //changePassword 
-exports.changePassword = async(rea,res) => {
+exports.changePassword = async(req,res) => {
     try{
           //get data from req body
           const userDetails = await User.findById(req.user.id);
