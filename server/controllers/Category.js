@@ -81,6 +81,14 @@ exports.categoryPageDetails = async (req, res) => {
 					message: "Category not found" 
 				});
 		}
+
+		if (!selectedCategory.courses || !Array.isArray(selectedCategory.courses)) {
+			console.log("No courses field found in the selected category.");
+			return res.status(404).json({
+				success: false,
+				message: "No courses field found in the selected category.",
+			});
+		}
 		// what if there are no courses in such categories
 		if (selectedCategory.courses.length === 0) {
 			console.log("No courses found for the selected category.");
